@@ -6,11 +6,13 @@
     <title>canvas test</title>
 </head>
 <body>
+<canvas id="text"></canvas>
 <canvas id="canvas"></canvas>
-<p onclick="draw()">开始画画</p>
 <canvas id="canvas21" width="400" height="300"></canvas>
-<script>
-    function draw() {
+
+
+<script type="text/javascript">
+function draw() {
         var ctx = document.getElementById('canvas').getContext('2d');
         for (var i=0;i<6;i++){
             for (var j=0;j<6;j++){
@@ -20,9 +22,6 @@
             }
         }
     }
-</script>
-
-<script type="text/javascript">
       function draw21(id) {
             var canvas = document.getElementById(id)
             if (canvas == null)
@@ -44,8 +43,16 @@
             context.fillRect(240,0 , 100, 100);
             context.strokeRect(240, 120, 100, 100);
         }
+        function drawtext() {
+          var ctx = document.getElementById('text').getContext('2d');
+          ctx.font = "48px serif";
+            ctx.textBaseline = "hanging";
+            ctx.strokeText("Hello world", 0, 100);
+        }
  window.onload = function () {
            draw21("canvas21");
+           draw();
+           drawtext();
        }
 </script>
 </body>
