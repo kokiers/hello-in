@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>阴影demo</title>
+		<style type="text/css">
+			.box{ background: #fbfbfb;box-shadow: 0  5px 4px  -4px  #000;width: 400px;height: 400px;;}
+			.boxx{ background: #fbfbfb;box-shadow: 5px  0px 5px  -5px  #000,-5px  0px 5px  -5px  #000;width: 400px;height: 400px;margin-top: 30px;;}
+		 	.box3{ background: #fbfbfb;box-shadow: 0px  5px 5px  -5px  #000,0px  -5px 5px  -5px  #000;width: 400px;height: 400px;margin-top: 30px;;}
+			.line{width: 500px;height: 10px;margin:20px;background: repeating-linear-gradient(135deg, 
+				  #000, #000 .25em /* black stripe */, 
+				  #0092b7 0, #0092b7 .75em /* blue stripe */
+				);;}
+			.line2{width: 500px;height: 10px;margin:20px;background: repeating-linear-gradient(120deg, 
+			  #0092b7 0, 
+			  #000 1px /* transition from previous blue stripe */, #000 .25em, 
+			  #0092b7 calc(.25em + 1px) /* from black to blue */, #0092b7 .75em
+			);}
+			.line3{width: 19em;height: 10em;;
+background: 
+  repeating-linear-gradient(90deg, 
+      #c8c8c8, #c8c8c8 0.125em /* lines */, 
+      transparent 0.125em, transparent 1.25em /* space between */
+  ) 50% no-repeat;
+background-size: 12.625em /* = 10*1.25em + .125em */ .5em;}
+.line4{width: 19em;height: 12em;;
+background: 
+  repeating-linear-gradient(90deg, /* major */
+      #c8c8c8, #c8c8c8 .125em /* lines */, 
+      transparent , transparent 2.5em /* space between */
+  ) 50% no-repeat, 
+  repeating-linear-gradient(90deg, /* minor */
+      #c8c8c8, #c8c8c8 .125em /* lines */, 
+      transparent , transparent 1.25em /* space between */
+  ) 50% no-repeat;
+background-size: 12.625em 1em, 12.625em .5em;}
+		</style>
+	</head>
+	<body>
+	例子来源 <a href="http://www.w3cplus.com/">大漠 </a>
+		<div class="box">	单边阴影
+			11
+		</div>
+		<div class="boxx">	左右阴影
+		</div>
+		<div class="box3">	上下阴影
+		</div>
+		<p>线条</p>
+		<div class="line"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
+		<div class="line4"></div>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js测试</title>
+		<style>
+		*{margin:0;padding:0;}
+		.tr-box{width: 500px;overflow:hidden;padding-left:40px;padding-top:20px;}
+		.tr-box span{font-size:16px;margin-right:20px;display: inline-block;float: left;line-height: 30px;;}
+		.tr-ul{list-style: none;float: left;;}
+		.tr-ul li{width: 40px;border: 1px solid #f2f2f2;padding:6px 8px;text-align:center;float: left;margin-right:20px;cursor: pointer;}
+		.tr-ul li.tr-act{border:1px solid red;color: red;;}
+		.btn{display: block;background:#0094FF;width: 70px;height: 40px;line-height: 40px;text-align: center;color: #fff;margin-left:60px;margin-top:20px;text-decoration: none;;}
+		.test{width: 400px;;}
+		</style>
+	</head>
+	<body>
+	<div class="tr-wrap">
+		<div class="tr-box">
+			<span>颜色:</span>
+			<ul class="tr-ul tr-color">
+				<li id="r">红色</li>
+				<li id="h">黄色</li>
+				<li id="l">绿色</li>
+				<li id="f">粉色</li>
+			</ul>
+		</div>
+		<div class="tr-box">
+			<span>尺寸:</span>
+			<ul class="tr-ul tr-size">
+				<li id="s">S</li>
+				<li id="m">M</li>
+				<li id="l">L</li>
+			</ul>
+		</div>
+		<a href="javascript:void(0)" class="btn">提交</a>
+		<p id="wz"></p>
+	</div>
+	<script src="../dist/jquery-2.1.4.min.js"></script>
+	<script>
+		$(function(){
+			$(".tr-ul li").click(function(){
+				$(this).addClass("tr-act").siblings().removeClass("tr-act");
+			});
+			$(".btn").click(function(){
+			var _color = false;
+			var _size = false;
+				 $(".tr-color li").each(function(){	
+					   if($(this).hasClass("tr-act")){						   
+					   _color = this.id	;
+					   return false;
+					   }else{					   
+					   return true;
+					   }
+					   return _color;
+					  
+				});				
+				$(".tr-size li").each(function(){				 
+					   if($(this).hasClass("tr-act")){					   
+					   _size = this.id	;
+					   return false;
+					   }else{
+					   return true;
+					   } 
+					   return _size;
+					   
+				});				
+				if(_color!=0&&_size!=0){
+					$("#wz").text("颜色:"+_color+";尺码:"+_size);
+				}else{
+					alert("还没有填写颜色或尺码");	
+				}
+			});
+		})
+		
+	</script>
+	</body>
+</html>
